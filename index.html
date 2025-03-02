@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATTRACTOR SYSTEM // MU/TH/UR 6000</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>MU/TH/UR 6000 <span class="highlight">ATTRACTOR</span> ANALYSIS</h1>
+        </header>
+        
+        <main>
+            <div class="visualization-container">
+                <div id="visualization"></div>
+                
+                <div class="info-panel">
+                    <div class="panel-header">
+                        <h2>SYSTEM DATA</h2>
+                        <div class="status">MODE: <span id="status">ACTIVE</span></div>
+                    </div>
+                    
+                    <div class="coordinates">
+                        <div class="coordinate">
+                            <div class="label">X:</div>
+                            <div class="value" id="x-coordinate">0.0000</div>
+                        </div>
+                        <div class="coordinate">
+                            <div class="label">Y:</div>
+                            <div class="value" id="y-coordinate">0.0000</div>
+                        </div>
+                        <div class="coordinate">
+                            <div class="label">Z:</div>
+                            <div class="value" id="z-coordinate">0.0000</div>
+                        </div>
+                    </div>
+                    
+                    <div class="coordinate-graphs">
+                        <h3>COORDINATE HISTORY</h3>
+                        <div class="graph-container">
+                            <canvas id="x-graph"></canvas>
+                        </div>
+                        <div class="graph-container">
+                            <canvas id="y-graph"></canvas>
+                        </div>
+                        <div class="graph-container">
+                            <canvas id="z-graph"></canvas>
+                        </div>
+                    </div>
+                    
+                    <div class="attractor-info">
+                        <h3 id="attractor-name">LORENZ SYSTEM</h3>
+                        <p id="attractor-description">
+                            The Lorenz system is a system of ordinary differential equations first studied by Edward Lorenz. 
+                            It is notable for having chaotic solutions for certain parameter values and initial conditions.
+                        </p>
+                        <div class="parameters" id="parameters-container">
+                            <!-- Parameters will be dynamically generated here -->
+                        </div>
+                        <div class="parameter-controls">
+                            <button id="update-params-btn">UPDATE PARAMETERS</button>
+                        </div>
+                    </div>
+                    
+                    <div class="system-status">
+                        <div class="status-item">SYSTEM: <span class="highlight">NOMINAL</span></div>
+                        <div class="status-item">TIME: <span id="sim-time">00:00:00</span></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button id="lorenz-btn" class="active">LORENZ</button>
+                <button id="rossler-btn">ROSSLER</button>
+                <button id="aizawa-btn">AIZAWA</button>
+                <button id="thomas-btn">THOMAS</button>
+                <button id="reset-btn">RESET</button>
+            </div>
+        </main>
+        
+        <footer>
+            <p>WEYLAND-YUTANI CORP // RESTRICTED ACCESS</p>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
